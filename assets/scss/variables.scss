@@ -1,0 +1,22 @@
+/**
+* Globals
+*/
+$primary: #4EC690;
+$secondary: #EEF5F2;
+$info: #1976D2;
+
+/**
+* Custom Variables
+*/
+$font-size-nav: 20px;
+$max-width-lg: 748px;
+$max-width-xl: 1540px;
+
+/**
+* Vuetify Variables
+*/
+$font-size-root: 16px;
+$container-max-widths: (
+  'lg': $max-width-lg,
+  'xl': $max-width-xl
+);
