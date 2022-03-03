@@ -1,0 +1,54 @@
+/**
+* Globals
+*/
+.v-application {
+  a {
+    text-decoration: none;
+    color: $info;
+  }
+}
+/**
+* Main Navigation
+*/
+#primary-nav {
+  .v-toolbar__content {
+    margin: auto;
+    max-width: $max-width-xl;
+    .v-toolbar__title  {
+      a {
+        color: #fff;
+        font-size: 22px;
+        text-decoration: none;
+        text-transform: lowercase;
+      }
+    }
+    .v-toolbar__items {
+      .v-btn {
+        font-size: $font-size-nav;
+      }
+    }
+    a {
+      text-transform: uppercase;
+    }
+  }
+}
+
+/**
+* Footer
+*/
+.v-footer {
+  .logo {
+    font-size: 32px;
+  }
+  .column--heading {
+    font-size: $font-size-nav;
+  }
+  .v-list {
+    .v-list-item {
+      min-height: 32px;
+      a {
+        color: $info;
+      }
+    }
+  }
+}
