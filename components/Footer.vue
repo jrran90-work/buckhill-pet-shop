@@ -24,7 +24,7 @@
             </v-list-item>
           </v-list>
         </v-col>
-        <v-col md="3">
+        <v-col md="2">
           <div class="column--heading font-weight-medium">Contact</div>
           <v-list color="transparent">
             <v-list-item class="px-0">
@@ -38,7 +38,7 @@
             </v-list-item>
           </v-list>
         </v-col>
-        <v-col md="3">
+        <v-col md="2">
           <div class="column--heading font-weight-medium">Information</div>
           <v-list color="transparent">
             <v-list-item class="px-0" to="/about">
@@ -53,7 +53,7 @@
           </v-list>
         </v-col>
         <v-col cols="3">
-          <div class="column--heading font-weight-medium">Information</div>
+          <div class="column--heading font-weight-medium invisible">Information</div>
           <v-list color="transparent">
             <v-list-item class="px-0">
               <v-list-item-content class="d-block text--secondary">

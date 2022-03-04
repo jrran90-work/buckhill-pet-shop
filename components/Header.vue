@@ -36,6 +36,28 @@
     <v-btn to="/products" class="mr-5" outlined x-large>
       <v-icon left>mdi-cart</v-icon> Cart (0)
     </v-btn>
-    <v-btn to="/promotions" outlined x-large>Login</v-btn>
+    <v-btn outlined x-large @click="showLoginDialog">Login</v-btn>
+    <auth-login />
+    <auth-register />
   </v-app-bar>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters({
+      modal: 'auth/modal'
+    })
+  }, 
+  methods: {
+    showLoginDialog () {
+      this.$store.dispatch('auth/showModal', {
+        show: true,
+        property: 'login',
+      })
+    }
+  }
+}
+</script>

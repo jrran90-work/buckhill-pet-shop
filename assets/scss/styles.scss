@@ -6,6 +6,15 @@
     text-decoration: none;
     color: $info;
   }
+  .invisible {
+    visibility: hidden;
+  }
+}
+/**
+* Custom 
+*/
+.cursor-pointer {
+  cursor: pointer;
 }
 /**
 * Main Navigation
