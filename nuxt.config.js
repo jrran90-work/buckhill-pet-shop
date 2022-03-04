@@ -43,6 +43,7 @@ export default {
     "~/plugins/nuxt-client-init.js",
     '~/plugins/axios.js',
     '~/plugins/helpers.js',
+    '~/plugins/filters.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
