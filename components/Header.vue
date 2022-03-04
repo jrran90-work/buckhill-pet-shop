@@ -20,14 +20,8 @@
           </v-btn>
         </template>
         <v-list tile>
-          <v-list-item>
-            <v-list-item-title>Category A</v-list-item-title>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>Category B</v-list-item-title>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>Category C</v-list-item-title>
+          <v-list-item v-for="(category, index) in categories.data" :key="index" :to="category.uuid">
+            <v-list-item-title>{{ category.title | capitalize }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -45,6 +39,13 @@
     </div>
     <div v-else>
       <auth-logout />
+      <v-avatar
+        color="primary darken-1"
+        size="56"
+        class="ml-4"
+      >
+        {{ fullname | initials }}
+      </v-avatar>
     </div>
     <auth-login />
     <auth-register />
@@ -59,12 +60,15 @@ export default {
     ...mapGetters({
       isLogged: 'auth/check',
       user: 'auth/user',
-    })
-  },
-  methods: {
-    logout () {
-      
+      categories: 'category/list'
+    }),
+    fullname () {
+      return `${this.user.first_name} ${this.user.last_name} `
     }
+  },
+  mounted () {
+    this.$store.dispatch('category/getCategories')
+    console.log(this.user)
   }
 }
 </script>
