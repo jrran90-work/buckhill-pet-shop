@@ -1,19 +1,21 @@
 <template>
-  <v-app-bar id="primary-nav" color="primary" height="80" elevation="0" dark fixed app>
+  <v-app-bar
+    id="primary-nav"
+    color="primary"
+    height="80"
+    elevation="0"
+    dark
+    fixed
+    app
+  >
     <v-toolbar-title>
-      <NuxtLink to="/">
-        <v-icon size="38">mdi-paw</v-icon> petson.
-      </NuxtLink>
+      <NuxtLink to="/"> <v-icon size="38">mdi-paw</v-icon> petson. </NuxtLink>
     </v-toolbar-title>
     <v-spacer />
     <v-toolbar-items>
       <v-menu offset-y rounded="0">
         <template #activator="{ on, attrs }">
-          <v-btn
-            text
-            v-bind="attrs"
-            v-on="on"
-          >
+          <v-btn text v-bind="attrs" v-on="on">
             Products <v-icon small right>mdi-chevron-down</v-icon>
           </v-btn>
         </template>
@@ -36,7 +38,14 @@
     <v-btn to="/products" class="mr-5" outlined x-large>
       <v-icon left>mdi-cart</v-icon> Cart (0)
     </v-btn>
-    <v-btn outlined x-large @click="showLoginDialog">Login</v-btn>
+    <div v-if="!isLogged">
+      <v-btn outlined x-large @click="$showAuthDialog('login', true)"
+        >Login</v-btn
+      >
+    </div>
+    <div v-else>
+      <auth-logout />
+    </div>
     <auth-login />
     <auth-register />
   </v-app-bar>
@@ -48,15 +57,13 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters({
-      modal: 'auth/modal'
+      isLogged: 'auth/check',
+      user: 'auth/user',
     })
-  }, 
+  },
   methods: {
-    showLoginDialog () {
-      this.$store.dispatch('auth/showModal', {
-        show: true,
-        property: 'login',
-      })
+    logout () {
+      
     }
   }
 }
