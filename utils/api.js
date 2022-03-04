@@ -2,21 +2,22 @@ const API = {
   /**
    * User API Endpoints
    */
-  USER_LOGIN: "/user/login",
-  USER_LOGOUT: "/user/logout",
+  USER: '/user',
+  USER_LOGIN: '/user/login',
+  USER_CREATE: '/user/create',
+  USER_LOGOUT: '/user/logout',
 
   /**
    * Products API Endpoints
    */
-  PRODUCT: "/product",
-  PRODUCTS: "/products",
+  PRODUCT: '/product',
+  PRODUCTS: '/products',
 
   /**
    * Categories API Endpoints
    */
-  CATEGORY: "/category",
-  CATEGORIES: "/categories",
+  CATEGORY: '/category',
+  CATEGORIES: '/categories',
+}
 
-};
-
-export { API };
+export { API }
