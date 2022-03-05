@@ -16,6 +16,51 @@
 .cursor-pointer {
   cursor: pointer;
 }
+.custom-slider {
+  .v-slider__track-container {
+    height: 8px !important;
+    .v-slider__track-background,
+    .v-slider__track-fill
+    {
+      border-radius: 4px;
+    }
+  }
+  .v-slider__thumb.white {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0px 2px 76px 0px rgba(0,0,0,0.75);
+  }
+}
+.ellipsis-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.custom-pagination {
+  ul.v-pagination {
+    li {
+      button {
+        box-shadow: none;
+        font-size: 15px;
+        width: 40px;
+        height: 40px;
+        &.v-pagination__item {
+          background: rgba(0, 0, 0, 0.08);
+          &.v-pagination__item--active {
+            background: $primary;
+          }
+        }
+        .v-icon {
+          font-size: 34px;
+        }
+      }
+    }
+  }
+}
 /**
 * Main Navigation
 */
