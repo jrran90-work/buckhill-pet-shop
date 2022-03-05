@@ -136,6 +136,7 @@ export default {
         this.$store.dispatch("auth/saveToken", {token: data.data.token})
         await this.$store.dispatch("auth/fetchUser")
         this.$showAuthDialog('register', false)
+        this.$refs.authForm.reset()
       } catch (e) {} finally {
         this.form.loading = false
       }
