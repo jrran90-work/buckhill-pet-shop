@@ -83,13 +83,20 @@ export default {
       this.form.loading = true
       try {
         const { data } = await this.$axios.post(this.$api(API.USER_LOGIN), this.form)
-        this.$store.dispatch("auth/saveToken", {
+        this.$store.dispatch('auth/saveToken', {
           token: data.data.token,
           remember: this.form.remember
         });
-        await this.$store.dispatch("auth/fetchUser")
+        await this.$store.dispatch('auth/fetchUser')
         this.$showAuthDialog('login', false)
-      } catch (e) {} finally {
+      } catch (e) {
+        this.$notify({
+          show: true,
+          text: e.response.data.error,
+          color: 'red',
+          timeout: 3000
+        })
+      } finally {
         this.form.loading = false
       }
     },

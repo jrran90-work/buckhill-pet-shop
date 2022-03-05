@@ -13,13 +13,23 @@ export default ({ app, store }, inject) => {
 
   /**
    * Auth Dialog (Login | Sign Up)
-   * @param string uri
-   * @return string
+   * @param string dialog
+   * @param string show
+   * @return void
    */
   inject('showAuthDialog', (dialog, show) => {
     store.dispatch('auth/showModal', {
       show,
       property: dialog,
     })
+  })
+
+  /**
+   * Notification
+   * @param Object options
+   * @return void
+   */
+  inject('notify', (options) => {
+    store.dispatch('notification/set', options)
   })
 }
