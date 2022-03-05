@@ -8,16 +8,28 @@ const API = {
   USER_LOGOUT: '/user/logout',
 
   /**
+   * Categories API Endpoints
+   */
+  CATEGORY: '/category',
+  CATEGORIES: '/categories',
+
+  /**
+   * Brands API Endpoints
+   */
+  BRAND: '/brand',
+  BRANDS: '/brands',
+
+  /**
    * Products API Endpoints
    */
   PRODUCT: '/product',
   PRODUCTS: '/products',
 
   /**
-   * Categories API Endpoints
+   * File API Endpoints
    */
-  CATEGORY: '/category',
-  CATEGORIES: '/categories',
+  FILE: '/file',
+  FILE_UPLOAD: '/file/upload',
 }
 
 export { API }
