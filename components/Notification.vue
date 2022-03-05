@@ -36,7 +36,6 @@ export default {
   watch: {
     stateNotifications (notifications) {
       this.notifications = notifications
-      console.log(notifications)
     }
   },
   methods: {
