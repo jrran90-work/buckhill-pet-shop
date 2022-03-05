@@ -1,10 +1,14 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  env: {
+    baseApi: 'https://pet-shop.buckhill.com.hr/api/v1',
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - buckhill-pet-shop',
-    title: 'buckhill-pet-shop',
+    titleTemplate: '%s - Pet Shop',
+    title: 'Pet Shop',
     htmlAttrs: {
       lang: 'en',
     },
@@ -21,9 +25,9 @@ export default {
 
   // Loading Screen
   loadingIndicator: {
-    name: "cube-grid",
-    color: colors.blue.darken2,
-    background: "white",
+    name: 'cube-grid',
+    color: '#4EC690',
+    background: 'white',
   },
 
   // Local server port
@@ -32,10 +36,15 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/scss/app.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    "~/plugins/nuxt-client-init.js",
+    '~/plugins/axios.js',
+    '~/plugins/helpers.js',
+    '~/plugins/filters.js',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -60,20 +69,21 @@ export default {
     baseURL: '/',
   },
 
+  router: {
+    middleware: ["check-auth"],
+  },
+
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ['~/assets/scss/variables.scss'],
+    treeShake: true,
     theme: {
-      dark: true,
+      dark: false,
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
+        light: {
+          primary: '#4EC690',
+          secondary: '#EEF5F2',
+          info: '#1976D2',
         },
       },
     },
