@@ -26,7 +26,7 @@ $ npm run generate
 * Search Products
 
 ## Active Routes
-`/` Home
-`/products` Products
-`/products/category/{uuid}` List products by category 
-`/products/brand/{uuid}` List products by brand 
+- `/` Home
+- `/products` Products
+- `/products/category/{uuid}` List products by category 
+- `/products/brand/{uuid}` List products by brand 
