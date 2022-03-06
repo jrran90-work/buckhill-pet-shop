@@ -275,6 +275,7 @@ export default {
     onSearch () {
       clearTimeout(this.search.timeout)
 
+      this.pagination.page = 1
       this.search.timeout = setTimeout(() => {
         this.loadProducts()
       }, this.search.duration)
